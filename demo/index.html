@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRIT HRMS — Modern Payroll Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gritBlue: '#1289A7',
+                        gritNavy: '#0d1117',
+                        gritCard: '#161b27',
+                        gritBorder: 'rgba(255, 255, 255, 0.08)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(24, 29, 37, 0.85); backdrop-filter: blur(16px); }
+        .hero-gradient { background: radial-gradient(circle at top left, rgba(18, 137, 167, 0.15), transparent 40%); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-gritNavy text-slate-200 selection:bg-gritBlue/30">
+
+    <nav class="fixed top-0 w-full z-50 glass border-b border-gritBorder px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gritBlue rounded-lg flex items-center justify-center shadow-lg shadow-gritBlue/20">
+                <i class="fas fa-users-gear text-white"></i>
+            </div>
+            <span class="text-xl font-bold tracking-tight text-white">GRIT <span class="text-gritBlue">Payroll</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
+            <a href="#" class="hover:text-white transition">Home</a>
+            <a href="#features" class="hover:text-white transition">Features</a>
+            <a href="#howitworks" class="hover:text-white transition">How it Works</a>
+            <a href="#demo" class="hover:text-white transition">Live Demo</a>
+        </div>
+       <button onclick="toggleModal()" class="bg-gritBlue hover:bg-gritBlue/80 text-white px-5 py-2 rounded-lg text-sm font-semibold transition transform hover:-translate-y-0.5">
+    Get Started
+</button>
+    </nav>
+
+    <header class="relative pt-40 pb-20 px-6 hero-gradient overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block py-1 px-4 rounded-full bg-gritBlue/10 border border-gritBlue/20 text-gritBlue text-xs font-bold uppercase tracking-widest mb-6">
+                Redefining Zambian HRM
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tighter mb-6">
+                The Workforce Engine for <br> <span class="text-gritBlue">Visionary Teams.</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                A high-precision HR & Payroll platform designed with a "Quiet Luxury" aesthetic. Built for speed, transparency, and local compliance.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#demo" class="bg-white text-gritNavy px-8 py-4 rounded-xl font-bold hover:bg-slate-200 transition">View Dashboard</a>
+                <a href="#howitworks" class="border border-gritBorder bg-white/5 px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">How it Works</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="border-y border-gritBorder bg-white/[0.02]">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-gritBorder py-12">
+            <div class="text-center px-4">
+                <div class="text-3xl font-bold text-white mb-1" id="stat1">0</div>
+                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Employees</p>
+            </div>
+            <div class="text-center px-4">
+                <div class="text-3xl font-bold text-white mb-1" id="stat2">0</div>
+                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Modules</p>
+            </div>
+            <div class="text-center px-4">
+                <div class="text-3xl font-bold text-white mb-1" id="stat3">0%</div>
+                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Uptime</p>
+            </div>
+            <div class="text-center px-4">
+                <div class="text-3xl font-bold text-white mb-1" id="stat4">0</div>
+                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Reports</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">Everything HR. In one place.</h2>
+            <p class="text-slate-400">The core modules that drive organizational efficiency.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="reveal bg-gritCard border border-gritBorder p-8 rounded-2xl hover:border-gritBlue/40 transition group">
+                <div class="w-12 h-12 bg-gritBlue/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gritBlue group-hover:text-white transition">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Payroll Engine</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Automated calculations for base pay, allowances, and statutory deductions like ZRA and NAPSA.</p>
+            </div>
+            <div class="reveal bg-gritCard border border-gritBorder p-8 rounded-2xl hover:border-gritBlue/40 transition group">
+                <div class="w-12 h-12 bg-gritBlue/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gritBlue group-hover:text-white transition">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Attendance</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Real-time clock-in tracking with automated late-coming and overtime calculations.</p>
+            </div>
+            <div class="reveal bg-gritCard border border-gritBorder p-8 rounded-2xl hover:border-gritBlue/40 transition group">
+                <div class="w-12 h-12 bg-gritBlue/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gritBlue group-hover:text-white transition">
+                    <i class="fas fa-file-invoice"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Smart Invoicing</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Generate professional fiscal documents and tax reports with a single click.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="howitworks" class="py-24 px-6 bg-white/[0.015] border-y border-gritBorder">
+    <div class="max-w-6xl mx-auto text-center">
+        <div class="reveal inline-block py-1 px-3 rounded bg-gritBlue/10 border border-gritBlue/20 text-gritBlue text-[10px] font-bold uppercase tracking-widest mb-4">
+            How It Works
+        </div>
+        <h2 class="reveal text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+            Up and running in minutes
+        </h2>
+        <p class="reveal text-slate-400 text-lg max-w-2xl mx-auto mb-16">
+            Simple setup, powerful results. No complex configurations needed to get your HR operations moving.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            
+            <div class="reveal step-card group relative" style="transition-delay:0.05s">
+                <div class="mb-6 relative inline-block">
+                    <div class="w-14 h-14 bg-gritCard border border-gritBorder rounded-2xl flex items-center justify-center text-gritBlue font-black text-xl group-hover:border-gritBlue/50 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(18,137,167,0.2)]">
+                        1
+                    </div>
+                </div>
+                <h3 class="text-white font-bold text-lg mb-3">Create Your Account</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    Register and set up your organization profile. Configure departments, designations, and roles.
+                </p>
+            </div>
+
+            <div class="reveal step-card group relative" style="transition-delay:0.1s">
+                <div class="mb-6 relative inline-block">
+                    <div class="w-14 h-14 bg-gritCard border border-gritBorder rounded-2xl flex items-center justify-center text-gritBlue font-black text-xl group-hover:border-gritBlue/50 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(18,137,167,0.2)]">
+                        2
+                    </div>
+                </div>
+                <h3 class="text-white font-bold text-lg mb-3">Add Your Team</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    Import or manually add employees. Assign roles, departments, and permissions to each member.
+                </p>
+            </div>
+
+            <div class="reveal step-card group relative" style="transition-delay:0.15s">
+                <div class="mb-6 relative inline-block">
+                    <div class="w-14 h-14 bg-gritCard border border-gritBorder rounded-2xl flex items-center justify-center text-gritBlue font-black text-xl group-hover:border-gritBlue/50 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(18,137,167,0.2)]">
+                        3
+                    </div>
+                </div>
+                <h3 class="text-white font-bold text-lg mb-3">Configure Payroll</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    Create salary templates, set deduction rules (ZRA/NAPSA), bonuses, and provident fund structures.
+                </p>
+            </div>
+
+            <div class="reveal step-card group relative" style="transition-delay:0.2s">
+                <div class="mb-6 relative inline-block">
+                    <div class="w-14 h-14 bg-gritCard border border-gritBorder rounded-2xl flex items-center justify-center text-gritBlue font-black text-xl group-hover:border-gritBlue/50 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(18,137,167,0.2)]">
+                        4
+                    </div>
+                </div>
+                <h3 class="text-white font-bold text-lg mb-3">Run & Report</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    Process payroll, manage attendance and leaves, then export beautiful reports in seconds.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="demo" class="py-24 px-6 bg-white/[0.01] border-b border-gritBorder">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+            <div class="reveal inline-block py-1 px-3 rounded bg-gritBlue/10 border border-gritBlue/20 text-gritBlue text-[10px] font-bold uppercase tracking-widest mb-4">
+                All Modules
+            </div>
+            <h2 class="reveal text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+                Every module<br>you'll ever need
+            </h2>
+            <p class="reveal text-slate-400 text-lg mb-10">
+                From core HR to advanced payroll — every feature is built-in, not bolted on.
+            </p>
+
+            <div class="reveal flex flex-wrap gap-3">
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-users text-gritBlue"></i> Employee Mgmt
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-clock text-gritBlue"></i> Attendance
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-calendar text-gritBlue"></i> Leave Mgmt
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-money-bill text-gritBlue"></i> Payroll
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-piggy-bank text-gritBlue"></i> NAPSA / PF
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-hand-holding-usd text-gritBlue"></i> Loan Mgmt
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-minus-circle text-gritBlue"></i> Deductions
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-gift text-gritBlue"></i> Bonus Mgmt
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-sitemap text-gritBlue"></i> Departments
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-id-badge text-gritBlue"></i> Designations
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-graduation-cap text-gritBlue"></i> Training
+                </div>
+                <div class="bg-gritCard border border-gritBorder px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:border-gritBlue/50 transition cursor-default">
+                    <i class="fas fa-file-invoice text-gritBlue"></i> Billing
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal bg-gritCard border border-gritBorder p-8 rounded-3xl shadow-2xl relative overflow-hidden group" style="transition-delay:0.2s">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-gritBlue/10 blur-3xl rounded-full transition group-hover:bg-gritBlue/20"></div>
+            
+            <div class="flex justify-between items-center mb-8 pb-6 border-b border-white/5">
+                <div class="text-lg font-bold tracking-tighter text-white">HR <span class="text-gritBlue">Payroll</span></div>
+                <span class="bg-white/5 border border-white/10 px-3 py-1 rounded text-[10px] font-bold uppercase text-slate-400">April 2026</span>
+            </div>
+
+            <div class="mb-8">
+                <div class="text-xl font-bold text-white">Sarah Okonkwo</div>
+                <div class="text-xs text-slate-500 font-medium">Senior Engineering Lead · Lusaka HQ</div>
+            </div>
+
+            <div class="space-y-4 font-mono text-sm">
+                <div class="flex justify-between text-slate-300">
+                    <span>Basic Salary</span>
+                    <span class="text-white font-bold">K42,000.00</span>
+                </div>
+                <div class="flex justify-between text-slate-400">
+                    <span>Housing Allowance</span>
+                    <span class="text-emerald-400 font-bold">+ K5,000.00</span>
+                </div>
+                <div class="flex justify-between text-slate-400">
+                    <span>ZRA PAYE Tax</span>
+                    <span class="text-red-400 font-bold">- K12,400.00</span>
+                </div>
+                <div class="flex justify-between text-slate-400">
+                    <span>NAPSA Contribution</span>
+                    <span class="text-red-400 font-bold">- K1,200.00</span>
+                </div>
+                <div class="flex justify-between text-slate-400">
+                    <span>NHIMA Deduction</span>
+                    <span class="text-red-400 font-bold">- K420.00</span>
+                </div>
+                
+                <div class="pt-6 mt-6 border-t border-white/5 flex justify-between items-baseline">
+                    <span class="text-white font-bold uppercase tracking-widest text-xs">Net Take Home</span>
+                    <span class="text-gritBlue text-2xl font-bold tracking-tighter">K32,980.00</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <footer class="py-12 border-t border-gritBorder text-center">
+        <p class="text-xs text-slate-500 uppercase tracking-widest">&copy; 2026 GRIT Web Services. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Counter Logic for Stats
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = value + (id === 'stat3' ? '%' : '+');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Trigger counters when stats section is in view
+        const statsSection = document.querySelector('#stat1');
+        const statsObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateValue("stat1", 0, 500, 2000);
+                animateValue("stat2", 0, 16, 2000);
+                animateValue("stat3", 0, 99, 2000);
+                animateValue("stat4", 0, 24, 2000);
+                statsObserver.disconnect();
+            }
+        });
+        statsObserver.observe(statsSection);
+    </script>
+
+    <div id="authModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-[#0d1117]/80 backdrop-blur-xl" onclick="toggleModal()"></div>
+    
+    <div class="relative w-full max-w-md bg-[#161b27] border border-white/10 rounded-3xl shadow-2xl overflow-hidden transform transition-all">
+        
+        <button onclick="toggleModal()" class="absolute top-6 right-6 text-slate-500 hover:text-white transition">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+
+        <div class="p-8 md:p-10">
+            <div class="text-center mb-8">
+                <div class="w-12 h-12 bg-gritBlue/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i id="authIcon" class="fas fa-lock text-gritBlue text-xl"></i>
+                </div>
+                <h3 id="modalTitle" class="text-2xl font-bold text-white tracking-tight">Welcome Back</h3>
+                <p id="modalSub" class="text-slate-400 text-sm mt-2">Enter your credentials to access the engine.</p>
+            </div>
+
+            <form id="loginForm" class="space-y-4">
+                <input type="email" placeholder="Work Email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gritBlue transition">
+                <input type="password" placeholder="Password" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gritBlue transition">
+                <button type="submit" class="w-full bg-gritBlue hover:bg-gritBlue/80 text-white font-bold py-4 rounded-xl transition shadow-lg shadow-gritBlue/20">
+                    Sign In
+                </button>
+            </form>
+
+            <form id="registerForm" class="space-y-4 hidden">
+                <div class="flex gap-4">
+                    <input type="text" placeholder="First Name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gritBlue transition">
+                    <input type="text" placeholder="Last Name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gritBlue transition">
+                </div>
+                <input type="text" placeholder="Company Name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gritBlue transition">
+                <input type="email" placeholder="Work Email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gritBlue transition">
+                <button type="submit" class="w-full bg-white text-[#0d1117] font-bold py-4 rounded-xl transition hover:bg-slate-200">
+                    Create and Confirm Account
+                </button>
+            </form>
+
+            <div class="mt-8 pt-6 border-t border-white/5 text-center">
+                <p id="toggleText" class="text-sm text-slate-500">
+                    Don't have an account? 
+                    <button onclick="switchAuth()" class="text-gritBlue font-bold hover:underline ml-1">Create one</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById('authModal');
+    let isLoginView = true;
+
+    function toggleModal() {
+        modal.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+    }
+
+    function switchAuth() {
+        isLoginView = !isLoginView;
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const title = document.getElementById('modalTitle');
+        const sub = document.getElementById('modalSub');
+        const icon = document.getElementById('authIcon');
+        const toggle = document.getElementById('toggleText');
+
+        if (isLoginView) {
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+            title.innerText = "Welcome Back";
+            sub.innerText = "Enter your credentials to access the engine.";
+            icon.className = "fas fa-lock text-gritBlue text-xl";
+            toggle.innerHTML = `Don't have an account? <button onclick="switchAuth()" class="text-gritBlue font-bold hover:underline ml-1">Create one</button>`;
+        } else {
+            loginForm.classList.add('hidden');
+            registerForm.classList.remove('hidden');
+            title.innerText = "Start with GRIT";
+            sub.innerText = "Set up your organization's workspace in seconds.";
+            icon.className = "fas fa-rocket text-gritBlue text-xl";
+            toggle.innerHTML = `Already have an account? <button onclick="switchAuth()" class="text-gritBlue font-bold hover:underline ml-1">Sign in</button>`;
+        }
+    }
+</script>
+</body>
+</html>
